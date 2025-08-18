@@ -145,7 +145,6 @@ if __name__ == "__main__":
     data = load_csv_docs("historical_100_long.csv", framework="langchain")
     splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=100)
 
-    # sanitize to avoid empty/whitespace embedding errors
     chunks = [
         d
         for d in splitter.split_documents(data)
